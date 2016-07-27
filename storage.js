@@ -1,7 +1,7 @@
 (function () {
 
 	var STORAGE_ID = 'todo-store';
-	var tasks = [];
+	var tasks = JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
 
 	function newId(callback) {
 		if (callback && typeof callback === 'function') {
@@ -36,7 +36,7 @@
 	}
 
 	function list() {
-		return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
+		return tasks;
 	}
 
 	function add(task) {
