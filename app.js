@@ -1,21 +1,16 @@
-var first = firstName()
-var last = lastName()
-var name = first + " " + last;
+var toDo = toDo()
 var visit = 0;
 
-(function setName(firstName, lastName) {
-  name = firstName + " " + lastName
+(function settoDo(toDo) {
+  
 }
 
-function saveData(firstName, lastName, visitCount) {
-  localStorage.setItem("firstName", firstName);
-  localStorage.setItem("lastName", lastName);
-  localStorage.setItem("visitCount", visitCount);
-  
+function saveData(toDo) {
+  localStorage.setItem("toDo", toDo);
+    
   var data = {
-    firstName: firstName,
-    lastName: lastName,
-    visitCount: visitCount
+    toDo: toDo,
+    
   };
   
   localStorage.setItem("data", JSON.stringify(data));
@@ -25,22 +20,18 @@ function getItem(keyName, defaultValue) {
   return localStorage.getItem(keyName) || defaultValue;
 }
 
-function lastName() {
-  return getItem("lastName", "Coward");
+function toDo() {
+  return getItem("toDo",);
 }
 
-function firstName() {
-  return getItem("firstName", "Anonymous");
-}
-
-function visitCount() {
-  visit = parseInt(getItem("visitCount"), 10) || 0;
+function taskCount() {
+  visit = parseInt(getItem("taskCount"), 10) || 0;
   return visit;
 }
 
-function updateName(id) {
-  var newFirst = prompt("First Name", first);
-  var newLast = last = prompt("Last Name", last);
+function updatetoDo(id) {
+  var newtToDo = prompt("toDo");
+  
   
   if (newFirst && newFirst !== first) {
     first = newFirst;
