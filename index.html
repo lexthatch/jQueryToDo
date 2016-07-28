@@ -11,7 +11,7 @@
 		}
 	</style>
 </head>
-<form name="toDoList">
+<form name="todoList">
 	<input type="text" name="ListItem" />
 </form>
 
@@ -19,9 +19,9 @@
 
 	<div class="container">
 		<h2>Alex's Todo List</h2>
-		<p>Todo: <span id="toDo"></span></p>
+		<p>Todo: <span id="todo"></span></p>
 		<p>Tasks: <span id="tasks"></span></p>
-		<button onclick="updatetoDo('toDo')">Update ToDo</button>
+		<button onclick="updatetoDo('todo')">Update Todo</button>
 		<button onclick="clearLocalStorage()">Reset</button>
 
 
@@ -29,12 +29,12 @@
 	</div>
 	</div>
 	<script>
-		  document.getElementById("toDo").textContent = ToDo;
+		  document.getElementById("todo").textContent = toDo;
     
     var tasks = taskCount() + 1;
     document.getElementById("tasks").textContent = tasks;
     
-    saveData(toDo, tasks);
+    saveData(todo, tasks);
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-resource.min.js"></script>
